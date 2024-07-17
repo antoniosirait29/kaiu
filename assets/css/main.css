@@ -52,7 +52,6 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
-  overflow-x: hidden;
 }
 
 .text-shadow {
@@ -88,7 +87,6 @@ h6 {
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -787,7 +785,7 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  margin-top: 90px;
+  margin-top: 65px;
   width: 100%;
   min-height: 80vh;
   position: relative;

@@ -67,7 +67,6 @@
       }
 
       .map {
-        position: relative;
         width: 100%;
         height: auto;
       }
@@ -82,7 +81,7 @@
         top: 18%;
         left: 70%;
         z-index: 1;
-        width: 57%;
+        width: 530px;
         background: rgba(255, 255, 255, 0.3);
         padding: 10px;
         border-radius: 5px;
@@ -135,24 +134,25 @@
         display: flex;
       }
 
-      .containerfacility{
+      .facility{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         max-width: 1200px;
         padding: 20px;
+        text-align: center;
       }
     </style>
   </head>
 
   <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <div class="container-fluid position-relative d-flex align-items-center">
+        <a href="index.html" class="logo d-flex align-items-center me-auto ms-5">
           <img src="assets/img/kaiunivlogo.png" alt="" />
         </a>
 
-        <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" class="navmenu me-5">
           <ul>
             <li><a href="index.html" class="fw-bold">Home</a></li>
             <li><a href="aboutUs.html" class="active fw-bold">About Us</a></li>
@@ -183,14 +183,15 @@
       </section>
       <!-- /Hero Section -->
       <!-- Maps Section -->
-      <div class="containermap">
+      <div class="container map">
         <div class="header">
           <h1 style="font-weight: bold; margin-top: 20px;" data-aos="zoom-out"><span class="orange">Training Center</span> <span class="blue">Location of the PT. KAI (Persero)</span></h1>
           <p data-aos="zoom-out" style="text-align: center;">The training center of PT. Indonesian Railways (Persero) spread across Java and Sumatra</p>
         </div>
-        <div class="content" data-aos="zoom-out">
+        <div class="" data-aos="zoom-out">
           <div class="map">
             <img src="assets/img/mapslegend.png" alt="Map of Indonesia with Training Centers" />
+          </div>
           <div class="training-centers">
             <div class="center">
               <div class="code">MTS</div>
@@ -221,9 +222,9 @@
       </div>
       <!-- Maps Section -->
        <!-- Facility Section -->
-      
+
       <h1 style="text-align: center;">Fasilitas</h1>
-      <div class="containerfacility">
+      <div class="container facility">
         <div class="card" style="width: 20rem; border: white;">
           <img src="assets/img/cta-bg.jpg" class="card-img-top" alt="...">
           <div class="card-body">
