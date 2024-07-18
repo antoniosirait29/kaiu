@@ -130,17 +130,37 @@
         text-align: center;
       }
 
-      .facility {
-        display: flex;
+      .container{
+        text-align: center;
       }
 
-      .facility{
+      .container-facility{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        max-width: 1200px;
-        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .card{
         text-align: center;
+      }
+
+      .container-client-say{
+        margin-top: 100px;
+        background-color: #D1D1D1;
+        height: 600px;
+      }
+
+      .container-testimoni{
+        display: flex;
+        justify-content: center;
+      }
+
+      .carousel-inner p{
+        text-align: justify;
       }
     </style>
   </head>
@@ -183,7 +203,7 @@
       </section>
       <!-- /Hero Section -->
       <!-- Maps Section -->
-      <div class="container map">
+      <div class="container map" style="margin-top: 10%;">
         <div class="header">
           <h1 style="font-weight: bold; margin-top: 20px;" data-aos="zoom-out"><span class="orange">Training Center</span> <span class="blue">Location of the PT. KAI (Persero)</span></h1>
           <p data-aos="zoom-out" style="text-align: center;">The training center of PT. Indonesian Railways (Persero) spread across Java and Sumatra</p>
@@ -221,10 +241,12 @@
         </div>
       </div>
       <!-- Maps Section -->
-       <!-- Facility Section -->
 
-      <h1 style="text-align: center;">Fasilitas</h1>
-      <div class="container facility">
+
+       <!-- Facility Section -->
+    <div class="container">
+      <h1 >Fasilitas</h1>
+      <div class="container-facility">
         <div class="card" style="width: 20rem; border: white;">
           <img src="assets/img/cta-bg.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -248,21 +270,94 @@
           <div class="card-body">
             <p class="facilityname">Training Center STL</p>
           </div>
-        </div>
-        <div class="card" style="width: 20rem; border: white;">
-          <img src="assets/img/cta-bg.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="facilityname">Sport Center</p>
-          </div>
-        </div>
-        <div class="card" style="width: 20rem; border: white;">
-          <img src="assets/img/cta-bg.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="facilityname">Sport Center</p>
-          </div>
-        </div>
+        </div>      
       </div>
-        <!-- Facility Section -->
+      <div style="text-align: center;">
+        <a href="#" class="btn" style="width: 100px; background-color: #1f3e6e; color: #ffffff;">More</a>
+      </div>
+    </div>
+    <!-- Facility Section -->
+<!-- Testimonials Section -->
+    <div class="container container-client-say">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="margin-top: 20px;"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+      <p class="fw-bold">Testimonial</p>
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-testimoni" style="justify-items: center; ">
+              <div class="card mb-3" style="max-width: 1000px; align-items: center; justify-items: center; text-align: center;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assets/img/mbappe.webp" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body" style="text-align: left;">
+                      <p class="card-text"><small class="text-body-secondary">Juli 05, 2024</small></p>
+                      <h4 class="card-title">Rifqi Bagus Fanandri</h4>
+                      <p class="card-text"><small class="text-body-secondary">Supir Ojol</small></p>
+                      <p class="card-text">Menjadi bagian dari perusahaan ini adalah suatu hal yang membanggakan bagi saya, Saya belajar banyak hal dari Bapak dan Ibu, baik tentang dunia kerja yang profesional maupun tentang kehidupan sehari-hari dan menjadi bermanfaat untuk sekeliling. Terima kasih banyak atas seluruh ilmunya selama ini.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container-testimoni" style="justify-items: center; ">
+              <div class="card mb-3" style="max-width: 1000px; align-items: center; justify-items: center; text-align: center;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assets/img/mbappe.webp" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body" style="text-align: left;">
+                      <p class="card-text"><small class="text-body-secondary">Juli 05, 2024</small></p>
+                      <h4 class="card-title">Daffa Khairy</h4>
+                      <p class="card-text"><small class="text-body-secondary">Supir Ojol</small></p>
+                      <p class="card-text">Menjadi bagian dari perusahaan ini adalah suatu hal yang membanggakan bagi saya, Saya belajar banyak hal dari Bapak dan Ibu, baik tentang dunia kerja yang profesional maupun tentang kehidupan sehari-hari dan menjadi bermanfaat untuk sekeliling. Terima kasih banyak atas seluruh ilmunya selama ini.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container-testimoni" style="justify-items: center; ">
+              <div class="card mb-3" style="max-width: 1000px; align-items: center; justify-items: center; text-align: center;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assets/img/mbappe.webp" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body" style="text-align: left;">
+                      <p class="card-text"><small class="text-body-secondary">Juli 05, 2024</small></p>
+                      <h4 class="card-title">Harsya Arvin Nugrogo</h4>
+                      <p class="card-text"><small class="text-body-secondary">Supir Ojol</small></p>
+                      <p class="card-text">Menjadi bagian dari perusahaan ini adalah suatu hal yang membanggakan bagi saya, Saya belajar banyak hal dari Bapak dan Ibu, baik tentang dunia kerja yang profesional maupun tentang kehidupan sehari-hari dan menjadi bermanfaat untuk sekeliling. Terima kasih banyak atas seluruh ilmunya selama ini.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
 
     </main>
 
