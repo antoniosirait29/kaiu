@@ -107,14 +107,20 @@
         display: flex;
         height: 500px;
         transition: transform 0.5s ease-in-out;
+        align-items: center;
       }
-      .card {
+      .card-history {
         min-width: 100%;
         padding: 20px;
         background: #ffffff;
         text-align: center;
         border: hidden;
       }
+
+      .card-history p {
+        font-size: 20px;
+      }
+
       .dots {
         display: flex;
         justify-content: center;
@@ -123,25 +129,75 @@
         transition: opacity 0.3s, transform 10s;
       }
       .dot {
-        width: 50px; /* Adjusted for SVG size */
-        height: 50px; /* Adjusted for SVG size */
-        cursor: pointer;
-        transition: opacity 0.3s, transform 10s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease-in-out;
       }
+
       .dot svg {
         width: 100%;
         height: 100%;
         transition: fill 0.3s;
       }
+
       .dot.inactive svg {
         fill: #ccc; /* Default fill color */
+      }
+
+      .dot.active {
+        transform: scale(1.5);
+      }
+
+      .dot.inactive {
+        transform: scale(1);
       }
 
       .container-sejarah {
         display: flex;
         justify-content: center;
-        margin-top: 10%;
+        margin-top: 5%;
         margin-bottom: 10%;
+      }
+
+      .jobfamily-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .jobfamily-card {
+        background-color: #ec6d29;
+        align-items: center;
+        border-radius: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 200px;
+        height: 155px;
+      }
+
+      .card-body {
+        background-color: #d9d9d9;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      .card-text {
+        font-weight: 700;
+      }
+
+      .jobfamily-tittle {
+        text-align: center;
+        margin-bottom: 100px;
+        font-weight: 600;
+        font-size: 80px;
       }
     </style>
   </head>
@@ -168,38 +224,53 @@
       <!-- Hero Section -->
       <section class="hero dark-background" style="background-image: url(assets/img/see-more-page.png)"></section>
       <!-- Hero Section -->
+
       <div class="container-sejarah">
-        <div class="carousel">
+        <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="cards">
-            <div class="card" id="card1">
+            <div class="card-history" id="card1">
               <h2>1950</h2>
-              <p style="font-weight: 800;">SATKA (Sekolah Ahli Teknik Kereta Api)</p>
+              <br />
+              <br />
+              <br />
+              <p style="font-weight: 800">SATKA (Sekolah Ahli Teknik Kereta Api)</p>
               <p>Pendidikan semi Perguruan Tinggi (Diploma III) untuk mendidik tenaga teknik</p>
             </div>
-            <div class="card" id="card2">
+            <div class="card-history" id="card2">
               <h2>1952</h2>
-              <p style="font-weight: 800;">SOKA (Sekolah Opseter Kereta Api)</p>
+              <br />
+              <br />
+              <br />
+              <p style="font-weight: 800">SOKA (Sekolah Opseter Kereta Api)</p>
               <p>Setingkat STM dan mempunyai dua jurusan, yaitu mesin dan elektro</p>
             </div>
-            <div class="card" id="card3">
+            <div class="card-history" id="card3">
               <h2>1955</h2>
-              <p style="font-weight: 800;">ADKA (Akademi Kereta Api)</p>
+              <br />
+              <br />
+              <br />
+              <p style="font-weight: 800">ADKA (Akademi Kereta Api)</p>
               <p>Jenjang pendidikan untuk tenaga ahli atau Inspektur Lalu Lintas dan perniagaan setingkat Perguruan Tinggi/non gelar</p>
             </div>
-            <div class="card" id="card4">
+            <div class="card-history" id="card4">
               <h2>1980</h2>
-              <p style="font-weight: 800;">Pusat Pendidikan dan Pelatihan</p>
+              <br />
+              <br />
+              <br />
+              <p style="font-weight: 800">Pusat Pendidikan dan Pelatihan</p>
               <p>Di bawah struktur Organisasi Personalia dan Umum, Sub Direktorat Pengembangan dan Pendayagunaan Personil</p>
             </div>
-            <div class="card" id="card5">
+            <div class="card-history" id="card5">
               <h2>2015 - Sekarang</h2>
-              <p style="font-weight: 800;">Pusdiklat Ir. H. Djuanda</p>
+              <br />
+              <br />
+              <br />
+              <p style="font-weight: 800">Pusdiklat Ir. H. Djuanda</p>
               <p>Disertai dengan pengukuhan 5 Balai Pelatihan yang sudah ada, serta peresmian Balai Pelatihan Ascep Sunarto di Palembang</p>
             </div>
           </div>
           <div class="dots" style="margin-top: 100px">
             <div class="dot active" data-index="0">
-              <!-- Train SVG for active dot -->
               <svg fill="#eb9500" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 481.682 481.682" xml:space="preserve" stroke="#eb9500">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -224,25 +295,21 @@
               </svg>
             </div>
             <div class="dot inactive" data-index="1">
-              <!-- Circle SVG for inactive dots -->
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
               </svg>
             </div>
             <div class="dot inactive" data-index="2">
-              <!-- Circle SVG for inactive dots -->
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
               </svg>
             </div>
             <div class="dot inactive" data-index="3">
-              <!-- Circle SVG for inactive dots -->
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
               </svg>
             </div>
             <div class="dot inactive" data-index="4">
-              <!-- Circle SVG for inactive dots -->
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
               </svg>
@@ -258,29 +325,235 @@
         let currentIndex = 0;
 
         const trainSVG = `
-            <svg fill="#eb9500" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 481.682 481.682" xml:space="preserve" stroke="#eb9500"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_202_"> <path id="XMLID_207_" d="M418.537,194.612C352.231,139.598,268.781,109.4,182.63,109.4H0v100.463v104.808v0.516h22.866 c5.439,10.377,16.19,17.53,28.72,17.53c12.528,0,23.28-7.153,28.718-17.53h74.03c5.438,10.377,16.19,17.53,28.72,17.53 c12.528,0,23.28-7.153,28.72-17.53h74.028c5.439,10.377,16.191,17.53,28.719,17.53s23.28-7.153,28.72-17.53l44.12-0.011 c28.97,0,94.337-23.99,94.321-52.92C481.689,250.502,452.813,223.05,418.537,194.612z M32.053,141.454H182.63 c24.971,0,49.668,3.105,73.794,8.537v36.779c0,14.094,11.434,25.527,25.527,25.527h106.92c3.043,2.355,6.228,4.515,9.203,6.98 c12.042,9.994,21.261,18.108,28.508,24.791H32.053v-34.205V141.454z"></path> <path id="XMLID_206_" d="M60.1,214.019h35.058c1.659,0,3.005-1.346,3.005-3.005v-35.058c0-1.659-1.346-3.005-3.005-3.005H60.1 c-1.659,0-3.005,1.346-3.005,3.005v35.058C57.094,212.673,58.44,214.019,60.1,214.019z"></path> <path id="XMLID_205_" d="M124.206,214.019h35.058c1.659,0,3.005-1.346,3.005-3.005v-35.058c0-1.659-1.346-3.005-3.005-3.005 h-35.058c-1.659,0-3.005,1.346-3.005,3.005v35.058C121.201,212.673,122.547,214.019,124.206,214.019z"></path> <path id="XMLID_204_" d="M188.312,214.019h35.058c1.659,0,3.005-1.346,3.005-3.005v-35.058c0-1.659-1.346-3.005-3.005-3.005 h-35.058c-1.659,0-3.005,1.346-3.005,3.005v35.058C185.307,212.673,186.653,214.019,188.312,214.019z"></path> <path id="XMLID_203_" d="M431.465,340.228H0v32.053h431.465c8.85,0,16.027-7.177,16.027-16.026S440.315,340.228,431.465,340.228z"></path> </g> </g></svg>`;
+          <svg fill="#eb9500" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 481.682 481.682" xml:space="preserve" stroke="#eb9500"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_202_"> <path id="XMLID_207_" d="M418.537,194.612C352.231,139.598,268.781,109.4,182.63,109.4H0v100.463v104.808v0.516h22.866 c5.439,10.377,16.19,17.53,28.72,17.53c12.528,0,23.28-7.153,28.718-17.53h74.03c5.438,10.377,16.19,17.53,28.72,17.53 c12.528,0,23.28-7.153,28.72-17.53h74.028c5.439,10.377,16.191,17.53,28.719,17.53s23.28-7.153,28.72-17.53l44.12-0.011 c28.97,0,94.337-23.99,94.321-52.92C481.689,250.502,452.813,223.05,418.537,194.612z M32.053,141.454H182.63 c24.971,0,49.668,3.105,73.794,8.537v36.779c0,14.094,11.434,25.527,25.527,25.527h106.92c3.043,2.355,6.228,4.515,9.203,6.98 c12.042,9.994,21.261,18.108,28.508,24.791H32.053v-34.205V141.454z"></path> <path id="XMLID_206_" d="M60.1,214.019h35.058c1.659,0,3.005-1.346,3.005-3.005v-35.058c0-1.659-1.346-3.005-3.005-3.005H60.1 c-1.659,0-3.005,1.346-3.005,3.005v35.058C57.094,212.673,58.44,214.019,60.1,214.019z"></path> <path id="XMLID_205_" d="M124.206,214.019h35.058c1.659,0,3.005-1.346,3.005-3.005v-35.058c0-1.659-1.346-3.005-3.005-3.005 h-35.058c-1.659,0-3.005,1.346-3.005,3.005v35.058C121.201,212.673,122.547,214.019,124.206,214.019z"></path> <path id="XMLID_204_" d="M188.312,214.019h35.058c1.659,0,3.005-1.346,3.005-3.005v-35.058c0-1.659-1.346-3.005-3.005-3.005 h-35.058c-1.659,0-3.005,1.346-3.005,3.005v35.058C185.307,212.673,186.653,214.019,188.312,214.019z"></path> <path id="XMLID_203_" d="M431.465,340.228H0v32.053h431.465c8.85,0,16.027-7.177,16.027-16.026S440.315,340.228,431.465,340.228z"></path> </g> </g></svg>`;
 
         const circleSVG = `
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/>
-            </svg>`;
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>`;
+
+        function updateActiveDot(index) {
+          dots[currentIndex].classList.remove("active");
+          dots[currentIndex].classList.add("inactive");
+          dots[currentIndex].innerHTML = circleSVG;
+
+          dots[index].classList.remove("inactive");
+          dots[index].classList.add("active");
+          dots[index].innerHTML = trainSVG;
+        }
 
         dots.forEach((dot, index) => {
           dot.addEventListener("click", () => {
-            dots[currentIndex].classList.remove("active");
-            dots[currentIndex].classList.add("inactive");
-            dots[currentIndex].innerHTML = circleSVG;
-
-            dot.classList.remove("inactive");
-            dot.classList.add("active");
-            dot.innerHTML = trainSVG;
-
             cards.style.transform = `translateX(-${index * 100}%)`;
-            // dots.style.transform = `translateX(-${index * 100}%)`;
+            updateActiveDot(index);
             currentIndex = index;
           });
         });
+
+        setInterval(() => {
+          const nextIndex = (currentIndex + 1) % cardCount;
+          cards.style.transform = `translateX(-${nextIndex * 100}%)`;
+          updateActiveDot(nextIndex);
+          currentIndex = nextIndex;
+        }, 3000);
       </script>
+
+      <section id="call-to-action" class="call-to-action section">
+        <img src="assets/img/image22.png" alt="" />
+
+        <div class="container">
+          <h1 class="jobfamily-tittle">Job Family</h1>
+          <div class="row jobfamily-container" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 30 30" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <style type="text/css">
+                    .st8 {
+                      fill: #ffffff;
+                    }
+                  </style>
+                  <path
+                    class="st8"
+                    d="M6,9.3L3.9,5.8l1.4-1.4l3.5,2.1v1.4l3.6,3.6c0,0.1,0,0.2,0,0.3L11.1,13L7.4,9.3H6z M21,17.8c-0.3,0-0.5,0-0.8,0 c0,0,0,0,0,0c-0.7,0-1.3-0.1-1.9-0.2l-2.1,2.4l4.7,5.3c1.1,1.2,3,1.3,4.1,0.1c1.2-1.2,1.1-3-0.1-4.1L21,17.8z M24.4,14 c1.6-1.6,2.1-4,1.5-6.1c-0.1-0.4-0.6-0.5-0.8-0.2l-3.5,3.5l-2.8-2.8l3.5-3.5c0.3-0.3,0.2-0.7-0.2-0.8C20,3.4,17.6,3.9,16,5.6 c-1.8,1.8-2.2,4.6-1.2,6.8l-10,8.9c-1.2,1.1-1.3,3-0.1,4.1l0,0c1.2,1.2,3,1.1,4.1-0.1l8.9-10C19.9,16.3,22.6,15.9,24.4,14z"
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Maintenance</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M9 14H15M4.6 10H19.4C19.9601 10 20.2401 10 20.454 9.89101C20.6422 9.79513 20.7951 9.64215 20.891 9.45399C21 9.24008 21 8.96005 21 8.4V5.6C21 5.03995 21 4.75992 20.891 4.54601C20.7951 4.35785 20.6422 4.20487 20.454 4.10899C20.2401 4 19.9601 4 19.4 4H4.6C4.03995 4 3.75992 4 3.54601 4.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601C3 4.75992 3 5.03995 3 5.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10ZM5 10H19V16.8C19 17.9201 19 18.4802 18.782 18.908C18.5903 19.2843 18.2843 19.5903 17.908 19.782C17.4802 20 16.9201 20 15.8 20H8.2C7.07989 20 6.51984 20 6.09202 19.782C5.71569 19.5903 5.40973 19.2843 5.21799 18.908C5 18.4802 5 17.9201 5 16.8V10Z"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Logistic</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M12 14V12M12 14V16M12 14H18C19.1046 14 20 13.1046 20 12M12 14H6C4.89543 14 4 13.1046 4 12M20 12V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V12M20 12V8C20 6.89543 19.1046 6 18 6H6C4.89543 6 4 6.89543 4 8V12M15 6V5C15 3.89543 14.1046 3 13 3H11C9.89543 3 9 3.89543 9 5V6"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Services</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Navigation / Building_03">
+                    <path
+                      id="Vector"
+                      d="M2 20H4M4 20H15M4 20V14.3682C4 13.8428 4 13.58 4.063 13.335C4.11883 13.1178 4.21073 12.9118 4.33496 12.7252C4.47505 12.5147 4.67114 12.3384 5.06152 11.9877L7.3631 9.91997C8.11784 9.24192 8.49549 8.90264 8.92249 8.77393C9.29894 8.66045 9.7007 8.66045 10.0771 8.77393C10.5045 8.90275 10.8827 9.2422 11.6387 9.92139L13.9387 11.9877C14.3295 12.3388 14.5245 12.5146 14.6647 12.7252C14.7889 12.9118 14.8807 13.1178 14.9365 13.335C14.9995 13.58 15 13.8428 15 14.3682V20M15 20H20M20 20H22M20 20V7.19691C20 6.07899 20 5.5192 19.7822 5.0918C19.5905 4.71547 19.2837 4.40973 18.9074 4.21799C18.4796 4 17.9203 4 16.8002 4H10.2002C9.08009 4 8.51962 4 8.0918 4.21799C7.71547 4.40973 7.40973 4.71547 7.21799 5.0918C7 5.51962 7 6.08009 7 7.2002V10.0002"
+                      stroke="#ffffff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Construction</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M162.3 611.8c-13.6 0-24.6 11.3-24.6 25.2v260.7c0 13.9 11 25.2 24.6 25.2 13.6 0 24.6-11.3 24.6-25.2V637c0-13.9-11-25.2-24.6-25.2zM391.6 710c-13.6 0-24.6 10.6-24.6 23.7v165.5c0 13.1 11 23.7 24.6 23.7 13.6 0 24.6-10.6 24.6-23.7V733.7c-0.1-13.1-11.1-23.7-24.6-23.7z m212.8-131c-13.6 0-24.6 10.9-24.6 24.3v295.2c0 13.4 11 24.3 24.6 24.3 13.6 0 24.6-10.9 24.6-24.3V603.4c0-13.5-11-24.4-24.6-24.4z m211.9-120.5c-13.6 0-24.6 11-24.6 24.6V902c0 13.6 11 24.6 24.6 24.6 13.6 0 24.6-11 24.6-24.6V483c-0.1-13.5-11-24.5-24.6-24.5z m88.6-364.3H658.3c-13.6 0-24.6 11-24.6 24.6 0 13.6 11 24.6 24.6 24.6h188.9L466.4 524 311.1 368.7c-9.2-9.2-25.5-9.2-34.7 0l-175 174.9c-9.6 9.6-9.6 25.1 0 34.7 4.8 4.8 11.1 7.2 17.4 7.2 6.3 0 12.6-2.4 17.4-7.2l157.5-157.5L449 576.1c9.6 9.6 25.1 9.6 34.7 0l396.5-396.5v185.7c0 13.6 11 24.6 24.6 24.6 13.6 0 24.6-11 24.6-24.6V118.7c0-13.5-11-24.5-24.5-24.5z"
+                    fill="#ffffff"
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Financial</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg fill="#ffffff" width="99px" height="99px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M23.313 26.102l-6.296-3.488c2.34-1.841 2.976-5.459 2.976-7.488v-4.223c0-2.796-3.715-5.91-7.447-5.91-3.73 0-7.544 3.114-7.544 5.91v4.223c0 1.845 0.78 5.576 3.144 7.472l-6.458 3.503s-1.688 0.752-1.688 1.689v2.534c0 0.933 0.757 1.689 1.688 1.689h21.625c0.931 0 1.688-0.757 1.688-1.689v-2.534c0-0.994-1.689-1.689-1.689-1.689zM23.001 30.015h-21.001v-1.788c0.143-0.105 0.344-0.226 0.502-0.298 0.047-0.021 0.094-0.044 0.139-0.070l6.459-3.503c0.589-0.32 0.979-0.912 1.039-1.579s-0.219-1.32-0.741-1.739c-1.677-1.345-2.396-4.322-2.396-5.911v-4.223c0-1.437 2.708-3.91 5.544-3.91 2.889 0 5.447 2.44 5.447 3.91v4.223c0 1.566-0.486 4.557-2.212 5.915-0.528 0.416-0.813 1.070-0.757 1.739s0.446 1.267 1.035 1.589l6.296 3.488c0.055 0.030 0.126 0.063 0.184 0.089 0.148 0.063 0.329 0.167 0.462 0.259v1.809zM30.312 21.123l-6.39-3.488c2.34-1.841 3.070-5.459 3.070-7.488v-4.223c0-2.796-3.808-5.941-7.54-5.941-2.425 0-4.904 1.319-6.347 3.007 0.823 0.051 1.73 0.052 2.514 0.302 1.054-0.821 2.386-1.308 3.833-1.308 2.889 0 5.54 2.47 5.54 3.941v4.223c0 1.566-0.58 4.557-2.305 5.915-0.529 0.416-0.813 1.070-0.757 1.739 0.056 0.67 0.445 1.267 1.035 1.589l6.39 3.488c0.055 0.030 0.126 0.063 0.184 0.089 0.148 0.063 0.329 0.167 0.462 0.259v1.779h-4.037c0.61 0.46 0.794 1.118 1.031 2h3.319c0.931 0 1.688-0.757 1.688-1.689v-2.503c-0.001-0.995-1.689-1.691-1.689-1.691z"
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">General Affair</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M2 12.8799V11.1199C2 10.0799 2.85 9.21994 3.9 9.21994C5.71 9.21994 6.45 7.93994 5.54 6.36994C5.02 5.46994 5.33 4.29994 6.24 3.77994L7.97 2.78994C8.76 2.31994 9.78 2.59994 10.25 3.38994L10.36 3.57994C11.26 5.14994 12.74 5.14994 13.65 3.57994L13.76 3.38994C14.23 2.59994 15.25 2.31994 16.04 2.78994L17.77 3.77994C18.68 4.29994 18.99 5.46994 18.47 6.36994C17.56 7.93994 18.3 9.21994 20.11 9.21994C21.15 9.21994 22.01 10.0699 22.01 11.1199V12.8799C22.01 13.9199 21.16 14.7799 20.11 14.7799C18.3 14.7799 17.56 16.0599 18.47 17.6299C18.99 18.5399 18.68 19.6999 17.77 20.2199L16.04 21.2099C15.25 21.6799 14.23 21.3999 13.76 20.6099L13.65 20.4199C12.75 18.8499 11.27 18.8499 10.36 20.4199L10.25 20.6099C9.78 21.3999 8.76 21.6799 7.97 21.2099L6.24 20.2199C5.33 19.6999 5.02 18.5299 5.54 17.6299C6.45 16.0599 5.71 14.7799 3.9 14.7799C2.85 14.7799 2 13.9199 2 12.8799Z"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Operations</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="90px" height="90px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: none;
+                        stroke: #ffffff;
+                        stroke-miterlimit: 10;
+                        stroke-width: 1.92px;
+                      }
+                    </style>
+                  </defs>
+                  <rect class="cls-1" x="3.38" y="3.38" width="17.25" height="17.25" rx="2.18"></rect>
+                  <rect class="cls-1" x="7.21" y="7.21" width="9.58" height="9.58" rx="1.92"></rect>
+                  <line class="cls-1" x1="7.21" y1="0.5" x2="7.21" y2="2.42"></line>
+                  <line class="cls-1" x1="12" y1="0.5" x2="12" y2="2.42"></line>
+                  <line class="cls-1" x1="16.79" y1="0.5" x2="16.79" y2="2.42"></line>
+                  <line class="cls-1" x1="7.21" y1="21.58" x2="7.21" y2="23.5"></line>
+                  <line class="cls-1" x1="12" y1="21.58" x2="12" y2="23.5"></line>
+                  <line class="cls-1" x1="16.79" y1="21.58" x2="16.79" y2="23.5"></line>
+                  <line class="cls-1" x1="0.5" y1="16.79" x2="2.42" y2="16.79"></line>
+                  <line class="cls-1" x1="0.5" y1="12" x2="2.42" y2="12"></line>
+                  <line class="cls-1" x1="0.5" y1="7.21" x2="2.42" y2="7.21"></line>
+                  <line class="cls-1" x1="21.58" y1="16.79" x2="23.5" y2="16.79"></line>
+                  <line class="cls-1" x1="21.58" y1="12" x2="23.5" y2="12"></line>
+                  <line class="cls-1" x1="21.58" y1="7.21" x2="23.5" y2="7.21"></line>
+                </g>
+              </svg>
+              <div class="card-body" style="padding: 0; align-content: center">
+                <p class="card-text" style="align-items: center">Infromation Technology</p>
+              </div>
+            </div>
+            <div class="card jobfamily-card">
+              <svg width="99px" height="99px" viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M471.2 566.4c-9.6 0-17.6-8-17.6-17.6s8-17.6 17.6-17.6h81.6c9.6 0 17.6 8 17.6 17.6s-8 17.6-17.6 17.6H471.2zM186.4 361.6c-14.4 0-27.2-12.8-27.2-27.2 0-14.4 12.8-27.2 27.2-27.2h24.8c8.8 0 16-6.4 16-15.2 7.2-99.2 67.2-189.6 156.8-234.4 4-2.4 8.8-3.2 12-3.2 14.4 0 27.2 12.8 27.2 27.2v56c0 8.8 7.2 16 16 16s16-7.2 16-16V55.2c0-13.6 10.4-25.6 23.2-27.2 10.4-1.6 21.6-1.6 32-1.6 12 0 24.8 0.8 35.2 1.6 13.6 1.6 23.2 12.8 23.2 27.2v81.6c0 8.8 7.2 16 16 16s16-7.2 16-16v-55.2c0-14.4 12.8-27.2 27.2-27.2 3.2 0 8 0.8 12.8 3.2C732 104.8 790.4 192 797.6 292c0.8 8.8 7.2 15.2 16 15.2h24.8c14.4 0 27.2 12.8 27.2 27.2 0 14.4-12.8 27.2-27.2 27.2H186.4z m567.2-48c-2.4-6.4-3.2-12-4-18.4-4.8-69.6-41.6-134.4-98.4-176v17.6c0 35.2-28.8 64-64 64s-64-28.8-64-64V74.4H504V136c0 35.2-28.8 64-64 64s-64-28.8-64-64v-18.4c-59.2 41.6-96 107.2-101.6 177.6-0.8 6.4-1.6 12-4 18.4h483.2z"
+                    fill=""
+                  ></path>
+                  <path
+                    d="M83.2 1022.4c-20.8 0-40-8.8-52.8-24-11.2-13.6-16-31.2-12-48 32-164 181.6-298.4 376-336.8-74.4-48-120-136-120-234.4v-5.6h476.8v5.6c0 97.6-45.6 186.4-120.8 234.4 194.4 39.2 344 173.6 376 336.8 3.2 16.8-0.8 34.4-12 48-12.8 15.2-32 24-52.8 24H83.2zM512 649.6c-109.6 0-215.2 32-297.6 91.2-79.2 56.8-132 134.4-148.8 218.4-0.8 4 0.8 7.2 2.4 8 4 4.8 8.8 7.2 15.2 7.2h859.2c6.4 0 12-2.4 15.2-6.4 0.8-0.8 3.2-4 1.6-8-16-84.8-68.8-162.4-148.8-219.2C727.2 681.6 621.6 649.6 512 649.6zM324.8 421.6c17.6 104 95.2 179.2 186.4 179.2S680 525.6 697.6 421.6H324.8z"
+                    fill=""
+                  ></path>
+                </g>
+              </svg>
+              <div class="card-body" style="padding: 0; align-content: center">
+                <p class="card-text" style="align-items: center">Human Capital Management</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer id="footer" class="footer">
